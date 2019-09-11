@@ -6,127 +6,128 @@
 int ePrimo(int numero);
 
 int main(){
-    setlocale(LC_ALL,"Portuguese");
+    	setlocale(LC_ALL,"Portuguese");
 		
 	int numero;
 
 	do {
 		//Exibe o menu:
-		printf("------------ MENU ------------\n");
-		printf("0 - Sair\n");
-		printf("1 - N˙mero Primo\n");
-		printf("2 - PotÍncia\n");
-		printf("3 - Raiz\n");
-		printf("4 - Ano Bissexto\n");
-		printf("5 - MÈdia Ponderade TrÍs Notas\n");
-		printf("6 - MÈdia Duas Notas\n");
-		printf("7 - *****\n");
-		printf("8 - *****\n");
-		printf("9 - Meus Dados\n"); 
-		printf("------------------------------\n");
+		printf("------------ MENU ------------\n"
+	    	" 0 - Sair\n"
+	    	" 1 - N√∫mero Primo\n"
+	    	" 2 - Pot√™ncia\n"
+	    	" 3 - Raiz\n"
+	    	" 4 - Ano Bissexto\n"
+	    	" 5 - M√©dia Ponderade Tr√™s Notas\n"
+	    	" 6 - M√©dia Duas Notas\n"
+	    	" 7 - *****\n"
+	    	" 8 - *****\n"
+	    	" 9 - Meus Dados\n" 
+	    	"------------------------------\n");
+		
 		//Obtem o numero
-		printf("\nDigite um n˙mero do menu: ");
-	    scanf("%d",&numero);
+		printf("\nDigite um n√∫mero do menu: ");
+	    	scanf("%d",&numero);
 		switch(numero){			
 		   case 0:  //se zero der tchau
-			   printf("\nTchau!!!\n\n"); 	
-			   exit(1);
+		   	printf("\nTchau!!!\n\n"); 	
+		   	exit(1);
 			  
 		   case 1:{
-                int numPrimo;
-				printf("\nN⁄MERO PRIMO\n");
-			    printf("------------------------------------------------------- \n");
-				printf("\nDigite um n˙mero para saber se ele È primo: ");
-	            scanf("%d",&numPrimo);
-				ePrimo(numPrimo) ? printf("\nO n˙mero %d È primo.\n\n",numPrimo) : printf("\nO n˙mero %d n„o È primo.\n\n",numPrimo) ; 		   	   
-			    break;
+                	int numPrimo;
+			printf("\nN√öMERO PRIMO\n");
+		    	printf("------------------------------------------------------- \n");
+			printf("\nDigite um n√∫mero para saber se ele √© primo: ");
+	            	scanf("%d",&numPrimo);
+			ePrimo(numPrimo) ? printf("\nO n√∫mero %d √© primo.\n\n",numPrimo) : printf("\nO n√∫mero %d n√£o √© primo.\n\n",numPrimo) ; 		   	   
+		    	break;
 		   }  
 		        
 		   case 2:{
-			   float a; 
-			   int b;
-			   printf("\nPOT NCIA\n");
-			   printf("------------------------------------------------------- \n");
-			   printf("Informe um n˙mero de ponto flutuante para A: ");
-	           scanf("%f",&a);
-	           printf("Informe um n˙mero inteiro para B: ");
-	           scanf("%d",&b);
-	           printf("A potÍncia de A elevado a B È: %.2f.\nO resultado na forma cientÌfica È: %e.\n\n",pow(a,b),pow(a,b));
-			   break;
+		   	float a; 
+		   	int b;
+		   	printf("\nPOT√äNCIA\n");
+		   	printf("------------------------------------------------------- \n");
+		   	printf("Informe um n√∫mero de ponto flutuante para A: ");
+	           	scanf("%f",&a);
+	           	printf("Informe um n√∫mero inteiro para B: ");
+	           	scanf("%d",&b);
+	           	printf("A pot√™ncia de A elevado a B √©: %.2f.\nO resultado na forma cient√≠fica √©: %e.\n\n",pow(a,b),pow(a,b));
+		   	break;
 		   }
 		   case 3:{
-		   	   float a; 
-			   int b;
-			   printf("\nRAIZ\n");
-			   printf("------------------------------------------------------- \n");
-			   printf("Informe um n˙mero de ponto flutuante para A: ");
-	           scanf("%f",&a);
-	           printf("Informe um n˙mero inteiro, diferente de zero, para B: ");
-	           scanf("%d",&b);
-	           if(b == 0) {
-	           		printf("O n˙mero digitado em B È inv·lido!\n\n");
-			   }
-			   else {
-			   		printf("A raiz de A na base B È: %f.\nO resultado na forma cientÌfica È: %e.\n\n",pow(a,1.0/(float)b),pow(a,(1.0/(float)b)));
-			   }
-			   break;
+		   	float a; 
+		   	int b;
+		   	printf("\nRAIZ\n");
+		   	printf("------------------------------------------------------- \n");
+		   	printf("Informe um n√∫mero de ponto flutuante para A: ");
+	           	scanf("%f",&a);
+	           	printf("Informe um n√∫mero inteiro, diferente de zero, para B: ");
+	           	scanf("%d",&b);
+	           	if(b == 0) {
+				printf("O n√∫mero digitado em B √© inv√°lido!\n\n");
+		   	}
+		   	else {
+				printf("A raiz de A na base B √©: %f.\nO resultado na forma cient√≠fica √©: %e.\n\n",pow(a,1.0/(float)b),pow(a,(1.0/(float)b)));
+		   	}
+		   	break;
 		   }
 		   case 4:{
-				int ano;
-			    printf("\nANO BISSEXTO\n");
-			    printf("------------------------------------------------------- \n");
-			    printf("Informe um ano para saber se ele e bissexto: ");
-	            scanf("%d",&ano);
-			    (ano % 4) ? printf("O ano %d n„o È bissexto!\n\n",ano) : printf("O ano %d È bissexto!\n\n",ano);
-			    break;
+			int ano;
+		    	printf("\nANO BISSEXTO\n");
+		    	printf("------------------------------------------------------- \n");
+		    	printf("Informe um ano para saber se ele e bissexto: ");
+	            	scanf("%d",&ano);
+		    	(ano % 4) ? printf("O ano %d n√£o √© bissexto!\n\n",ano) : printf("O ano %d √© bissexto!\n\n",ano);
+		    	break;
 		   }
 		   case 5:{
-		   	    float nota1, nota2, nota3, media;
-			    printf("\nM…DIA PONDERADA TR S NOTAS\n");
-			    printf("------------------------------------------------------- \n");
-			    printf("Informe sua primeira nota: ");
-	            scanf("%f",&nota1);
-	            printf("Informe sua segunda nota: ");
-	            scanf("%f",&nota2);
-	            printf("Informe sua terceira nota: ");
-	            scanf("%f",&nota3);
-	            media = ((nota1 + nota2 + (nota3 * 2))/4);
-			    printf("Sua mÈdia foi: %.2f\n",media);
-			    (media >= 60) ? printf("VocÍ foi aprovado. ParabÈns!!!\n\n") : printf("VocÍ foi reprovado!!!\n\n");
-			    break;
+		    	float nota1, nota2, nota3, media;
+		    	printf("\nM√âDIA PONDERADA TR√äS NOTAS\n");
+		    	printf("------------------------------------------------------- \n");
+		    	printf("Informe sua primeira nota: ");
+	            	scanf("%f",&nota1);
+	            	printf("Informe sua segunda nota: ");
+	            	scanf("%f",&nota2);
+	            	printf("Informe sua terceira nota: ");
+	            	scanf("%f",&nota3);
+	            	media = ((nota1 + nota2 + (nota3 * 2))/4);
+		    	printf("Sua m√©dia foi: %.2f\n",media);
+		    	(media >= 60) ? printf("Voc√™ foi aprovado. Parab√©ns!!!\n\n") : printf("Voc√™ foi reprovado!!!\n\n");
+		    	break;
 		   }
 		   	
 		   case 6:{
 		   	float nota1, nota2, media;
-			    printf("\nM…DIA DUAS NOTAS \n");
-			    printf("------------------------------------------------------- \n");
-			    printf("Informe sua primeira nota: ");
-	            scanf("%f",&nota1);
-	            if(nota1 < 0 || nota1 > 10) {
-	               printf("\nNota inv·lida!!\n\n");
-	               break;
-				}
-				printf("Informe sua segunda nota: ");
-	            scanf("%f",&nota2);
-			    if(nota2 < 0 || nota2 > 10) {
-	               printf("\nNota inv·lida!!\n\n");
-	               break;
-				}
-				media = ((nota1 + nota2) /2);
-				printf("Sua mÈdia foi: %.2f\n\n",media);
-			    break;
+		    	printf("\nM√âDIA DUAS NOTAS \n");
+		    	printf("------------------------------------------------------- \n");
+		    	printf("Informe sua primeira nota: ");
+	            	scanf("%f",&nota1);
+	            	if(nota1 < 0 || nota1 > 10) {
+	               		printf("\nNota inv√°lida!!\n\n");
+	               		break;
+			}
+			printf("Informe sua segunda nota: ");
+	            	scanf("%f",&nota2);
+		    	if(nota2 < 0 || nota2 > 10) {
+	               		printf("\nNota inv√°lida!!\n\n");
+	               		break;
+			}
+			media = ((nota1 + nota2) /2);
+			printf("Sua m√©dia foi: %.2f\n\n",media);
+		    	break;
 		   } 	
 		   case 7:
 		   case 8:
-		   	   break;
+		   	break;
 		   case 9:
 		        printf("\nMEUS DADOS\n");
-			    printf("------------------------------------------------------- \n"); 	
-				printf("NOME: THALES RAMALHO\n");
-				printf("MATRÕCULA: %e\n\n",1920026785);
-				break;
+		    	printf("------------------------------------------------------- \n"); 	
+			printf("NOME: THALES RAMALHO\n");
+			printf("MATR√çCULA: %e\n\n",1920026785);
+			break;
 		  default: //caso seja digitado um numero diferente de 0 a 9, opcao inexistente e reexibe o menu:
-				printf("Opcao inexistente!!!\n\n");   
+			printf("Opcao inexistente!!!\n\n");   
 			 
 		}
 		
