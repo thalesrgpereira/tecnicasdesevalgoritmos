@@ -137,13 +137,17 @@ int main(){
 }
 
 int ePrimo(int numero) {
-	register int i, divisores = 0;
-	for (i = 1; i <= numero; i++) {
-		if(numero % i == 0) divisores++;
-		if(divisores > 2) break;
-	}   
-	if(divisores == 2)
-	    return 1;
-	else
-	    return 0;
+	if(numero < 2){
+		return 0;
+	}
+	else if(numero == 2) {
+		return 1;
+	}
+	else {
+		register int i;
+		for (i = 2; i < numero; i++) {
+			if(numero % i == 0) return 0;
+		}
+		return 1;
+	}	    
 }
