@@ -25,9 +25,10 @@ int main(){
 		"------------------------------\n");
 		
 		//Obtem o numero escolhido pelo usuario
-		printf("\nDigite um n˙mero do menu: ");
+		printf("\nDigite um n√∫mero do menu: ");
 		scanf("%d",&numero);
-		//limpa o buffer do teclado para que os textos digitado a mais nao sejam utilizados por outro scanf
+		//fflush(stdin) limpa o buffer do teclado para que os textos digitado a mais nao sejam utilizados por outro scanf
+		//caso seja linux, tem que mudar para __fpurge(stdin);
 		fflush(stdin);
 		switch(numero){			
 			case 0:  //se zero der tchau
@@ -51,7 +52,7 @@ int main(){
 				scanf(" %s",&texto);
 				qVogais = contaVogais(texto);
 				if(qVogais == 0){
-					printf("O texto digitado n„o tem vogais.\n\n"); 
+					printf("O texto digitado n√£o tem vogais.\n\n"); 
 				}
 				else if(qVogais == 1){
 					printf("O texto digitado tem 1 vogal.\n\n"); 
@@ -70,7 +71,7 @@ int main(){
 				fflush(stdin);
 				printf("entrada 2: ");
 				scanf(" %40[^\n]s",&texto2);
-				compara(texto1,texto2) ? printf("O textos digitados s„o iguais.\n\n") : printf("O textos digitados s„o diferentes.\n\n"); 
+				compara(texto1,texto2) ? printf("O textos digitados s√£o iguais.\n\n") : printf("O textos digitados s√£o diferentes.\n\n"); 
 				break;
 			}   
 			case 4:{
@@ -80,7 +81,7 @@ int main(){
 				printf("Informe um texto: ");
 				scanf(" %s",&origem);
 				copia(origem, destino);
-				printf("Seu texto foi copiado para outra vari·vel que agora contÈm: %s.\n\n",destino); 
+				printf("Seu texto foi copiado para outra vari√°vel que agora cont√©m: %s.\n\n",destino); 
 				break;
 			} 
 			case 5:{
@@ -93,7 +94,7 @@ int main(){
 				printf("entrada 2: ");
 				scanf(" %40[^\n]s",&texto2);	
 				concatenar(texto1,texto2, texto3);
-				printf("saÌda: %s.\n\n",texto3); 
+				printf("sa√≠da: %s.\n\n",texto3); 
 				break;
 			}  
 			default: //caso seja digitado um numero diferente de 0 a 5, opcao inexistente e reexibe o menu:
@@ -116,7 +117,7 @@ int contaCaracteres(char *texto){
 
 int contaVogais(char *texto){
 	int i, contador = 0;
-	char vogais[10] = "aeiouAEIOU";
+	char vogais[11] = "aeiouAEIOU";
 	while (*texto) {
 		for(i = 0; i < 10; i++){
 			if (*texto == vogais[i]) contador++;		  
