@@ -26,6 +26,7 @@ int main(){
 		
 		//Obtem o numero escolhido pelo usuario
 		printf("\nDigite um número do menu: ");
+		numero=-1;
 		scanf("%d",&numero);
 		//fflush(stdin) limpa o buffer do teclado para que os textos digitado a mais nao sejam utilizados por outro scanf
 		//caso seja linux, tem que mudar para __fpurge(stdin);
@@ -85,7 +86,8 @@ int main(){
 				break;
 			} 
 			case 5:{
-				char texto1[40],texto2[40],texto3[80];
+				char texto1[40],texto2[40],texto3[81];
+				texto3[0] = '\0';
 				printf("\nCONCATENAR TEXTOS\n");
 				printf("------------------------------------------------------- \n");		   	
 				printf("entrada 1: ");
@@ -140,6 +142,7 @@ int compara(char *nome, char *nome2){
 }
 
 void concatenar(char *nome, char *nome2, char *nomeCompleto){
-	while (*nome) *nomeCompleto++ = *nome++;
-	while (*nome2) *nomeCompleto++ = *nome2++;
+	while (*nome && *nome!='\0') *nomeCompleto++ = *nome++;
+	while (*nome2 && *nome2!='\0') *nomeCompleto++ = *nome2++;
+	*nomeCompleto = '\0';
 }
